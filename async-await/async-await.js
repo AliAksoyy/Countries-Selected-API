@@ -1,12 +1,13 @@
 const getNews =async () => {
 
-  const API_KEY = "91bebcb7e4a2421089c507605565fcf0"
+  const API_KEY = "91bebcb7e4a2421089c507605565fcf"
 
     const url = "https://newsapi.org/v2/top-headlines?country=us&apiKey=" + API_KEY
-
+  let isError =false
     try {
          const res = await fetch(url);
          if(!res.ok){
+          isError=true
           throw new Error(`something went wrong ${res.status} `)
          }
          const data = await res.json();
@@ -21,10 +22,17 @@ const renderNews = (news)=> {
   console.log(news)
 
     const newsList = document.querySelector("#news-list")
+    if(isError){
+      newsList.innerHTML +=`
+      <h2>News Can not be fetched</h2>
+      <img src="./img/404.png">
+      
+      `
+    }
 
     news.forEach((item) => {
       const {title,decsription, urlToImage,url} = item
-
+    
       newsList.innerHTML += `
       <div class="col-md-6 col-lg-4 col-xl-3">
       <div class="card">
