@@ -1,15 +1,18 @@
 const getNews =async () => {
 
-  const API_KEY = "91bebcb7e4a2421089c507605565fcf0"
+  const API_KEY = "91bebcb7e4a2421089c507605565fcf"
 
     const url = "https://newsapi.org/v2/top-headlines?country=us&apiKey=" + API_KEY
 
-    const res = await fetch(url)  
+    try {
+         const res = await fetch(url);
+         const data = await res.json();
+         console.log(data["articles"]);
+    } catch (error) {
+      
+    }
 
-
-    const data = await res.json()
-
-    console.log(data)
+ 
 
 }
 
