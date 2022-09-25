@@ -20,19 +20,19 @@ const getNews =async () => {
 const renderNews = (news)=> {
   console.log(news)
 
-    const newsList = document.querySelector(".news-list")
+    const newsList = document.querySelector("#news-list")
 
     news.forEach((item) => {
-      const {title,decsription, urlToImage} = item
+      const {title,decsription, urlToImage,url} = item
 
       newsList.innerHTML += `
-      <div class="col">
+      <div class="col-md-6 col-lg-4 col-xl-3">
       <div class="card">
        <img src="${urlToImage}" class="card-img-top" alt="...">
        <div class="card-body">
        <h5 class="card-title">${title}</h5>
        <p class="card-text">${decsription}</p>
-       <a href="#" class="btn btn-primary">Go somewhere</a>
+       <a href="${url}" target="_blank" class="btn btn-danger">Go somewhere</a>
      </div>
       </div>
       </div>
