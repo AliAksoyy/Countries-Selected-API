@@ -1,5 +1,72 @@
 
 
+const fetchCountryByName = (name)=> {
+
+  const url = `https://restcountries.com/v3.1/name/${name}`;
+
+  fetch(url).then((res)=> {
+    if(!res.ok){
+      renderError(`Something went wrong`)
+      throw new Error("Something went wrong")
+    }
+    return res.json()
+  }).then((data)=> renderCountries(data))
+  .catch((err)=> console.log(err))
+
+}
+
+
+const renderError = (err)  => {
+  const countryDiv = document.querySelector(".countries");
+   
+  countryDiv.innerHTML += `
+    <h2>Something went wrong</h2>
+    <img src="./img/404.png">
+  `;
+
+}
+
+const renderCountries = (data)=> {
+
+console.log(data)
+  const countryDiv = document.querySelector(".countries");
+   const {
+     capital,
+     flags: { svg },
+     name: { common },
+     currencies,
+     languages,region
+   } = data[0];
+   
+   
+  countryDiv.innerHTML += `
+  <div class="card" style="width: 18rem;">
+  <img src="${svg}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">${common}</h5>
+    <p class="card-text">${region}</p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">${capital}</li>
+    <li class="list-group-item">${languages.tur}</li>
+    <li class="list-group-item">${currencies.TRY.name}</li>
+  </ul>
+  <div class="card-body">
+    <a href="#" class="card-link">Card link</a>
+    <a href="#" class="card-link">Another link</a>
+  </div>
+</div>
+  `;
+
+
+
+
+}
+
+
+
+
+fetchCountryByName ("turkey")
 
 
 
