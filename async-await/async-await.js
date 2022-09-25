@@ -6,10 +6,13 @@ const getNews =async () => {
 
     try {
          const res = await fetch(url);
+         if(!res.ok){
+          throw new Error(`something went wrong ${res.status} `)
+         }
          const data = await res.json();
          console.log(data["articles"]);
     } catch (error) {
-      
+      console.log(error)
     }
 
  
