@@ -1,4 +1,4 @@
-<h1 align="center">Checkout-Page</h1>
+<h1 align="center">Countries-Selected</h1>
 
 <h3>Overview</h3>
 👨‍💻 In this project I mastered division and responsive skills.I used mainly HTML, CSS and JS. You can see visual demo of the website below. The objective is to build out this real-like webpage and make it looking as professional as possible..
@@ -21,15 +21,13 @@
 ## Project Skeleton 
 
 ```
-004-team-members-page (folder)
+Countries-Selected-Page (folder)
 |
-|----readme.md                  
-|----images
-|----fonts             
-|----solution
-        |----index.html  
-        |----style.css   
-        |----main.js  
+|----Readme.md                  
+|----img
+|----app.js          
+|----index.html
+       
 ```
 
 <!-- --------------------------------------- -->
@@ -57,6 +55,10 @@
 - Js Dom Elements and Selectors
 
 - Js Event Handler
+
+-Js Fetch API
+
+-Js Async and await API
 
 ### At the end of the project, i will be able to;
 
