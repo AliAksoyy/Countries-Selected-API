@@ -99,7 +99,7 @@ const fetchCountryByAllName =async ()=> {
   
 
 }
-let counter = 0
+
 const renderNames = (data)=> {
   const formSelect = document.querySelector(".form-select")
   if(isError) {
