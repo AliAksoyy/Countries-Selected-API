@@ -14,7 +14,7 @@
 
 <hr>
 
-[📍click here to see page](https://aliaksoyy.github.io/checkout-page.js.exercise/)
+[📍click here to see page](https://aliaksoyy.github.io/Countries-Selected-API/)
 
 <!-- ------------------------------------------------------ -->
 
@@ -75,7 +75,7 @@ Countries-Selected-Page (folder)
 <hr>
 <h3>How to Use the Project</h3>
 <span>First download a code editor </span>
-<br><span>Second open the files : </span><a href='https://aliaksoyy.github.io/checkout-page.js.exercise/'>My Docs</a>
+<br><span>Second open the files : </span><a href='https://aliaksoyy.github.io/Countries-Selected-API/'>My Docs</a>
 <br><span>You can use this tutorial : </span><a href='https://www.youtube.com/watch?v=fJEbVCrEMSE'>VS Code tutorial</a>
 
 <!-- ------------------------------------------------------------------------- -->
