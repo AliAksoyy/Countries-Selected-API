@@ -1,6 +1,6 @@
 const getNews =async () => {
 
-  const API_KEY = "91bebcb7e4a2421089c507605565fcf"
+  const API_KEY = "91bebcb7e4a2421089c507605565fcf0"
 
     const url = "https://newsapi.org/v2/top-headlines?country=us&apiKey=" + API_KEY
 
@@ -10,16 +10,48 @@ const getNews =async () => {
           throw new Error(`something went wrong ${res.status} `)
          }
          const data = await res.json();
-         console.log(data["articles"]);
+         renderNews(data.articles)
+         
     } catch (error) {
       console.log(error)
     }
 
- 
+}
+const renderNews = (news)=> {
+  console.log(news)
+
+    const newsList = document.querySelector(".news-list")
+
+    news.forEach((item) => {
+      const {title,decsription, urlToImage} = item
+
+      newsList.innerHTML += `
+      <div class="col">
+      <div class="card">
+       <img src="${urlToImage}" class="card-img-top" alt="...">
+       <div class="card-body">
+       <h5 class="card-title">${title}</h5>
+       <p class="card-text">${decsription}</p>
+       <a href="#" class="btn btn-primary">Go somewhere</a>
+     </div>
+      </div>
+      </div>
+      
+      
+      `;
+      
+      
+      
+    })
 
 }
 
-getNews()
+
+
+
+
+
+window.addEventListener("load", getNews)
 
 
 
