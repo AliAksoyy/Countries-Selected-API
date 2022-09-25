@@ -1,14 +1,16 @@
+
+  let isError = false;
+
 const getNews =async () => {
 
-  const API_KEY = "91bebcb7e4a2421089c507605565fcf"
+  const API_KEY = "91bebcb7e4a2421089c507605565fcf0"
 
     const url = "https://newsapi.org/v2/top-headlines?country=us&apiKey=" + API_KEY
-  let isError =false
     try {
          const res = await fetch(url);
          if(!res.ok){
           isError=true
-          throw new Error(`something went wrong ${res.status} `)
+          // throw new Error(`something went wrong ${res.status} `)
          }
          const data = await res.json();
          renderNews(data.articles)
@@ -26,8 +28,8 @@ const renderNews = (news)=> {
       newsList.innerHTML +=`
       <h2>News Can not be fetched</h2>
       <img src="./img/404.png">
-      
       `
+      return;
     }
 
     news.forEach((item) => {
